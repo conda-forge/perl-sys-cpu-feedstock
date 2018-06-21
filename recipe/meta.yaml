@@ -18,10 +18,12 @@ build:
 requirements:
     host:
         - {{ compiler('c') }}
-        #- perl-threaded >=5.22.0
+        - perl-threaded >=5.22.0
         - perl >=5.22.0
-        #- perl-extutils-makemaker 7.24
+        - perl-extutils-makemaker 7.24
     run:
+        - perl-threaded >=5.22.0
+        - perl-extutils-makemaker 7.24
         - perl >=5.22.0
 test:
     imports:
