@@ -28,8 +28,9 @@ requirements:
         - perl-extutils-makemaker
     run:
         - libgcc-ng 7.2.0.*
-        - perl >=5.22.0
         - perl-threaded
+        - perl >=5.22.0
+        - perl-extutils-makemaker
 test:
     imports:
         - Sys::CPU
