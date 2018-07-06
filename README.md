@@ -9,6 +9,26 @@ Feedstock license: BSD 3-Clause
 
 Summary: Perl extension for getting CPU information. Currently only number of CPU's supported.
 
+Very important info about this package
+==================
+
+This package have some dependencies which is in bioconda so the recipe can't contain this dependencies.
+So, waiting for anyone add the dependencies in conda-channels, you have to add this requirement to your XML file if you want to use this package : 
+
+requirement for perl-data-dumper:
+
+- perl-test-more v1.001002
+
+requirement for perl-extutils-makemaker :
+
+- perl-app-cpanminus v1.7043
+- perl-data-dumper v2.161
+
+requirement for perl-sys-cpu :
+
+- perl-extutils-makemaker v7.24
+- perl-threaded v5.22.0
+
 
 
 Current build status
