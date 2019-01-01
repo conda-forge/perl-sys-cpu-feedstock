@@ -11,18 +11,16 @@ source:
     sha256: {{ hash }}
     
 build:
-    number: '2'
-    skip: true  # [win]  
-    skip: true  # [osx]
-    
+    number: 3
+    skip: true  # [win or osx]
+
 requirements:
-    host:
+    build:
         - {{ compiler('c') }}
-        - perl 5.22.0.1 0
-       
-        
+    host:
+        - perl
     run:
-        - perl 5.22.0.1 0
+        - perl
         
 test:
     imports:
@@ -32,6 +30,7 @@ about:
     license: perl5
     summary: Perl extension for getting CPU information. Currently only number of
         CPU's supported.
+
 extra:
     recipe-maintainers:
         - jupollet
