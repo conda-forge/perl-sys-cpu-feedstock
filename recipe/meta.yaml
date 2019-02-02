@@ -18,11 +18,11 @@ build:
 requirements:
     host:
         - {{ compiler('c') }}
-        - perl 5.22.0.1 0
+        - perl
        
         
     run:
-        - perl 5.22.0.1 0
+        - perl
         
 test:
     imports:
