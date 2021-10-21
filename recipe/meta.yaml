@@ -6,8 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://cpan.metacpan.org/authors/id/M/MZ/MZSANFORD/Sys-CPU-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  - url: https://cpan.metacpan.org/authors/id/M/MZ/MZSANFORD/Sys-CPU-{{ version }}.tar.gz
+    sha256: {{ sha256 }}
+  - url: https://raw.githubusercontent.com/Perl/perl5/v5.32.1/Copying
+    sha256: d77d235e41d54594865151f4751e835c5a82322b0e87ace266567c3391a4b912
+  - url: https://raw.githubusercontent.com/Perl/perl5/v5.32.1/Artistic
+    sha256: dd90d4f42e4dcadf5a7c09eea0189d93c7b37ae560c91f0f6d5233ed3b9292a2
 
 build:
   number: 2
@@ -28,7 +32,10 @@ test:
 
 about:
   home: http://metacpan.org/pod/Sys::CPU
-  license: perl5
+  license: GPL-1.0-or-later OR Artistic-1.0-Perl
+  license_file:
+    - Artistic
+    - Copying
   summary: >
     Perl extension for getting CPU information. Currently only number of
     CPU's supported.
