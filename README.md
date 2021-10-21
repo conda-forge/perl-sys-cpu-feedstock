@@ -3,11 +3,12 @@ About perl-sys-cpu
 
 Home: http://metacpan.org/pod/Sys::CPU
 
-Package license: perl5
+Package license: GPL-1.0-or-later OR Artistic-1.0-Perl
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/perl-sys-cpu-feedstock/blob/master/LICENSE.txt)
 
 Summary: Perl extension for getting CPU information. Currently only number of CPU's supported.
+
 
 Current build status
 ====================
@@ -31,6 +32,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4059&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/perl-sys-cpu-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4059&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/perl-sys-cpu-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4059&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/perl-sys-cpu-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
                 </a>
               </td>
             </tr>
