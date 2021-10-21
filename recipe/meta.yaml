@@ -34,6 +34,8 @@ requirements:
 test:
   imports:
     - Sys::CPU
+  commands:
+    - perl -le "use Sys::CPU; print Sys::CPU::cpu_count()"
 
 about:
   home: http://metacpan.org/pod/Sys::CPU
