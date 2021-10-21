@@ -1,38 +1,47 @@
-{% set name = "perl-sys-cpu" %}
 {% set version = "0.61" %}
-{% set hash = "250a86b79c231001c4ae71d2f66428092a4fbb2070971acafd471aa49739c9e4" %}
+{% set sha256 = "250a86b79c231001c4ae71d2f66428092a4fbb2070971acafd471aa49739c9e4" %}
  
 package:
-    name: {{ name }}
-    version: {{ version }}
-    
+  name: perl-sys-cpu
+  version: {{ version }}
+
 source:
-    url: https://cpan.metacpan.org/authors/id/M/MZ/MZSANFORD/Sys-CPU-{{ version }}.tar.gz
-    sha256: {{ hash }}
-    
+  - url: https://cpan.metacpan.org/authors/id/M/MZ/MZSANFORD/Sys-CPU-{{ version }}.tar.gz
+    sha256: {{ sha256 }}
+  - url: https://raw.githubusercontent.com/Perl/perl5/v5.32.1/Copying
+    sha256: d77d235e41d54594865151f4751e835c5a82322b0e87ace266567c3391a4b912
+  - url: https://raw.githubusercontent.com/Perl/perl5/v5.32.1/Artistic
+    sha256: dd90d4f42e4dcadf5a7c09eea0189d93c7b37ae560c91f0f6d5233ed3b9292a2
+
 build:
-    number: '2'
-    skip: true  # [win]  
-    skip: true  # [osx]
-    
+  number: 2
+
 requirements:
-    host:
-        - {{ compiler('c') }}
-        - perl
-       
-        
-    run:
-        - perl
-        
+  build:
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - make
+  host:
+    - perl
+  run:
+    - perl
+
 test:
-    imports:
-        - Sys::CPU
+  imports:
+    - Sys::CPU
+  commands:
+    - perl -le "use Sys::CPU; print Sys::CPU::cpu_count()"
+
 about:
-    home: http://metacpan.org/pod/Sys::CPU
-    license: perl5
-    summary: Perl extension for getting CPU information. Currently only number of
-        CPU's supported.
+  home: http://metacpan.org/pod/Sys::CPU
+  license: GPL-1.0-or-later OR Artistic-1.0-Perl
+  license_file:
+    - Artistic
+    - Copying
+  summary: >
+    Perl extension for getting CPU information. Currently only number of
+    CPU's supported.
+
 extra:
-    recipe-maintainers:
-        - jupollet
-        
+  recipe-maintainers:
+    - jupollet
